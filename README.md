@@ -5,12 +5,13 @@
 1. Lloyd's Algorithm (naive kmeans) [IMPLEMENTED, UNIT TESTED]
 2. kmeans++
 
-## Dependencies
+### Dependencies
 
 ```shell
 pip install torch
 ```
-
+## Examples:
+---
 ```python
 from kmeans import NaiveKmeans
 x = torch.randn(256, 3)
