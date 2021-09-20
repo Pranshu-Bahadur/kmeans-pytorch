@@ -9,8 +9,8 @@
 
 ### Current State:
 Implementing center initalizers:
-- [+] naive kmeans (uniform distribution)
-- [+] kmeans++ (D^2 distribution)
+- [x] naive kmeans (uniform distribution)
+- [x] kmeans++ (D^2 distribution)
 - [ ] kmeans-|| Oversampling
 
 ## Implementations:
