@@ -1,0 +1,43 @@
+Generalized Kmeans approximation for multi-GPU usage
+----------------------------------------------------
+What is a kmeans approximation algorithm?
+
+A turing-machine "function" that consumes X `C R^d & k `E Z^+
+
+[1] approx_kmeans(X, k) -> gamma `E Gamma `C Sigma_R  | |gamma| = k `V gamma `E Gamma and varphi_X(gamma) <> O(varphi_X^*)
+
+Types of [1]:
+1. Lloyd's Algorithm (a.k.a Naive kmeans)
+	+ Easy to implement
+	- Relatively low cost
+	-- Expensive Approximation Guarantee
+
+psuedocode:
+seeder [func, additional_params]
+function clustering(x, k, seeder, **kwargs):
+	centers <- seeder(x, k, **kwargs['seeder_params']) # single dispatch
+	states = {inf:()}	
+	while True:
+		curr_cost, state  <- compute(x, centers, **kwargs['compute_params'])
+		if min(states.keys()) is curr_cost:
+			return curr_cost, state[curr_cost]
+		states[curr_cost] := state
+	
+
+	1. centers
+	2. distances
+	3. clusters acc to argmin
+	4. cost
+
+		
+
+
+
+
+
+Legend
+------
+`E - Belongs to
+`C - improper subset
+`V - forall
+<> - within bounds

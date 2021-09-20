@@ -1,26 +1,50 @@
-
+# Kmeans approximation algorithms for GPU usage with pytorch.
 ---
-## Generalized implementation of kmeans approximation algorithms.
+### Note: This implementation supports multi-GPUs!!!
 
-1. Lloyd's Algorithm (naive kmeans) [IMPLEMENTED, UNIT TESTED]
+### Dependencies:
+```sh
+   pip install torch torchvision numpy
+```
+
+## Implementations:
+---
+1. Lloyd's Algorithm (a.k.a Naive Kmeans)
 2. kmeans++
+3. kmeans-||
 
-### Dependencies
 
-```shell
-pip install torch
-```
-## Examples:
----
-```python
-from kmeans import NaiveKmeans
-x = torch.randn(256, 3)
-NaiveKmeans(3)(x)
-```
+## Notes:
 
----
-To-dos
-- [ ] Add a brief description.
-- [ ] Make this repo a python package.
-- [ ] Add a cool image custom/non-copyrighted image logo for this library.
-- [ ] GPU support with dataparrallel
+Okay...What about the structure?
+
+It shouldn't confuse the user.
+
+kmeans.py
+
+Yeah I don't really see the point of multiple files.
+
+Okay that's kinda dumb. Code should be understandable.
+
+Idk making it an object makes no sense. Fuck it lets brute force this.
+
+psuedocode:
+function clustering(x, k, seeder, **kwargs):
+        centers <- seeder(x, k, **kwargs['seeder_params']) # single dispatch
+        states = {inf:()}
+        while True:  
+                curr_cost, state  <- compute(x, centers, **kwargs['compute_params'])
+                if min(states.keys()) is curr_cost:
+                        return curr_cost, state[curr_cost]
+                states[curr_cost] := state
+
+
+        1. centers
+        2. distances
+        3. clusters acc to argmin
+        4. cost
+
+
+
+
+
