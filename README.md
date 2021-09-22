@@ -2,6 +2,10 @@
 ---
 ### Note: This implementation supports multi-GPUs!!!
 
+### Screen recordings for this project.
+https://www.youtube.com/playlist?list=PL3obF89OwHs6CEZK9VaItPTAY6AVw_d6s
+----
+
 ### Dependencies:
 ```sh
    pip install torch
